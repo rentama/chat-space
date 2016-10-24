@@ -12,13 +12,13 @@
 ###userモデル
 
 * has_many :messages
-* has_many :user_group_ties
-* has_many :groups, through: :user_group_ties
+* has_many :group_users
+* has_many :groups, through: :group_users
 
 ###groupモデル
 
-* has_many :user_group_ties
-* has_many :users, through: :user_group_ties
+* has_many :group_users
+* has_many :users, through: :group_users
 * has_many :messages
 
 ###messageモデル
@@ -26,7 +26,7 @@
 * belongs_to :user
 * belongs_to :group
 
-###user_group_tieモデル
+###group_userモデル
 
 * belongs_to :user
 * belongs_to :group
@@ -50,7 +50,7 @@
 * user_id(integer)
 * group_id(integer)
 
-###user_group_tiesテーブル
+###group_usersテーブル
 
 * user_id(references) add_index
 * group_id(references) add_index
